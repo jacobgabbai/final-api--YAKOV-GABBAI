@@ -1,0 +1,120 @@
+﻿body {
+   
+    margin:0;
+    height:100vh;
+    width:100%;
+    background-color:red;
+    padding:0;
+    position:absolute;
+}
+.screen{
+    margin:0;
+    display:flex;
+    flex-direction:column;
+  
+   min-height:600px;
+    width:100%;
+    background-color:azure;
+}
+
+.head {
+   /* position: absolute;*/
+    background-color: black;
+    height: 100px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    top: 0;
+   
+}
+.maindiv {
+    top:0px;
+  flex-grow:1;
+    width: 100%;
+    padding-bottom:20px;
+    margin-bottom:0px;
+  /*  position:absolute;*/
+   
+   /* display:flex;*/
+    background-color: azure;
+}
+/*.center{
+    position:absolute;*/
+  /*  display:flex;*/
+    /*background-color:blueviolet;
+    height:650px;
+    width:100%;*/
+   /* margin-top:100px;*/
+/*}*/
+
+
+
+.hh1 {
+    font-size: 40px;
+    color: aqua;
+     margin-left: 30px;
+
+   
+}
+
+.ph1 {
+    color: white;
+    font-size: 20px;
+   margin-top:45px;
+   margin-left:10px
+   
+    
+}
+
+.foot {
+
+    display: flex;
+    background-color: black;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    padding:0;
+    margin:0;
+    /*position:fixed;*/
+}
+
+.hf1 {
+    margin-left: 50px;
+    margin-top: 30px;
+    color: aqua;
+}
+
+
+.divf {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 500px;
+}
+
+    .divf a {
+        padding: 20px;
+        color: white;
+        height: 20px;
+    }
+
+        .divf a i {
+            font-size: 30px
+        }
+
+.pm {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.span1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.span2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
