@@ -69,7 +69,7 @@ namespace api_final_19.Reposetory
            
             List<Teacher>? R = context.Teachers.ToList();
             Teacher? tt = new Teacher();
-            // int f = R.Count() ;
+          
             List<Teacher> LTN = new List<Teacher> ();
             List<Teacher> LTP = new List<Teacher>();
 

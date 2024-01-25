@@ -15,16 +15,7 @@ namespace api_final_19.Reposetory
             List<AnswerEx1> A = new List<AnswerEx1>();
             AnswerEx1 aa = new AnswerEx1();
             A = context.AnswerEx1s.ToList();
-            //if (A.Count == 0)
-            //{
-            //    aa.Id = 1;
-
-            //}
-            //else
-            //{
-            //    long e = A.Max(a => a.Id);
-            //    aa.Id = e + 1;
-            //}
+       
             string guid = Guid.NewGuid().ToString();
             aa.Id = guid;
             aa.QuestionEx1IdRef = a.QuestionEx1IdRef;

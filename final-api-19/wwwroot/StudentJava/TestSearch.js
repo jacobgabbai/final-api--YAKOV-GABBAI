@@ -82,27 +82,22 @@ async function testsearch() {
 
         const div = document.getElementById("div")
         div.replaceChildren()
-       /* div.style.border = "dotted"*/
         div.style.position = "relative"
         div.style.backgroundColor = "aquamarine"
         div.style.border="dotted"
         const p1 = document.createElement("p")
         p1.style.marginTop = "30px"
-      /*  p1.style.marginLeft="15%"*/
         p1.textContent = `test name : ${repsjson.testName}`
         p1.style.fontSize="25px"
         const br = document.createElement("br")
         const p2 = document.createElement("p")
         p2.style.fontSize = "25px"
-       /* p2.style.marginLeft = "15%"*/
         p2.textContent = `test date: ${repsjson.testDate}`
         const p3 = document.createElement("p")
         p3.style.fontSize = "25px"
-       /* p3.style.marginLeft = "15%"*/
         p3.textContent = `test start time: ${repsjson.startTime}`
         const p4 = document.createElement("p")
         p4.style.fontSize = "25px"
-      /*  p4.style.marginLeft = "15%"*/
         let mm = []
         mm = repsjson.totalTime.split(":")
         let yname = ""
@@ -130,9 +125,7 @@ async function testsearch() {
             hours = `and ${mm[1]} minutes `
         }
         p4.textContent = `Test Total Time: ${yname}  `
-       /* p4.textContent = `test total time: ${repsjson.totalTime} hour`*/
-        div.appendChild(p1)
-   
+        div.appendChild(p1) 
         div.appendChild(p2)
         div.appendChild(p3)
         div.appendChild(p4)

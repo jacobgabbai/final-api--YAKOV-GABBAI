@@ -27,7 +27,45 @@
     margin-left: 30px;
     padding-top: 20px;
 }
+.hhh2 {
 
+    margin-left:40%;
+    margin-top:0px;
+    font-size:40px;
+   
+}
+.divError {
+    margin-left:-15%;
+    float:left;
+    width:30%;
+    height:200px;
+    background-color:azure;
+   
+}
+.img {
+    float:left;
+    margin-left:12%;
+    width:30%;
+    margin-top:-100px;
+   
+}
+.divid {
+    margin-left:30px;
+    margin-top:-20px;
+    height:500px;
+    width:100%;
+    background-color:azure;
+    margin-bottom:30px;
+    }
+
+.btn1 {
+    background-color:black;
+    border-radius:10px;
+    color:white;
+    cursor:pointer;
+    
+        
+}
 .ph1 {
     color: white;
     font-size: 20px;

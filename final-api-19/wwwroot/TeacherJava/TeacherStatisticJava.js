@@ -128,7 +128,7 @@ async function testh() {
 
     if (rep.status == 200 && repo.length > 0) {
         table.id = "table"
-        table.style.backgroundColor = "azure"
+        table.style.backgroundColor = "aquamarine"
         const tr1 = document.createElement("tr")
         const td1 = document.createElement("td")
         td1.style.border = "2px solid black"
@@ -154,7 +154,6 @@ async function testh() {
         td3.innerHTML = " watch mistakes"
         td3.style.border = "2px solid black"
         td3.style.padding = "5px"
-       /* const sp = document.createElement("spacer")*/
 
         tr1.appendChild(td1)
         if (valuepoint1 == "student") {
@@ -255,7 +254,6 @@ function dissplay(a, b, c) {
 
     const hwr = document.createElement("h1")
     hwr.textContent = ` ${c.stuName}'s mistakes`
-  /*  hwr.style.marginLeft = "20%"*/
     const divwr11 = document.getElementById("divwr2")
     divwr11.style.backgroundColor="azure"
     divwr11.style.border = "dotted"
@@ -271,17 +269,44 @@ function dissplay(a, b, c) {
         const r = localStorage.getItem(`answersR${a}${z}`)
         const rr = r.split("+")
         const p1 = document.createElement("p")
+        p1.style.marginLeft = "auto"
         p1.textContent = `the right answer is - ${rr[0]}`
-       /* p1.style.marginLeft = "10%"*/
         const p2 = document.createElement("p")
-        /*p2.style.marginLeft = "10%"*/
         p2.textContent = ` chosen answer is -  ${ww[0]}`
+        p2.style.marginLeft = "auto%"
         const p3 = document.createElement("p")
         const q1 = localStorage.getItem(`question${a}${z}`)
-        p3.textContent = `Question-${z + 1} "${q1}"`
-      /*  p3.style.marginLeft = "15%"*/
-        p3.style.fontWeight = "bold"
-        divwr11.appendChild(p3)
+        const data = q1.split(":")
+
+        if (data[0] != "data") {
+            p3.textContent = `Question-${z + 1} "${q1}"`
+            p3.style.marginLeft = "25%"
+            p3.style.fontWeight = "bold"
+            divwr11.appendChild(p3)
+        }
+        else {
+            p3.textContent = `Question-${z + 1}`
+            p3.style.marginLeft = "auto"
+            p3.style.fontWeight = "bold"
+            p3.style.marginTop="20px"
+            divwr11.appendChild(p3)
+            const out = document.createElement("output")
+            out.style.height = "50px"
+            const divo = document.createElement("div")
+            divo.style.display = "flex"
+            divo.style.marginLeft = "35%"
+            divo.style.height = "70px"
+            divo.style.marginTop="20px"
+            let gg = q1
+            if (gg != "") {
+
+                divo.innerHTML = `<img src="${gg}"/>`
+                out.appendChild(divo)
+                divwr11.appendChild(out)
+            }
+        }
+        
+
         divwr11.appendChild(p2)
         divwr11.appendChild(p1)
     }

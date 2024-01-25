@@ -4,7 +4,7 @@
     width: 100%;
     background-color: azure;
     padding: 0;
-    /* position: absolute;*/
+
 }
 
 
@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     min-height: 737px;
-    /*width: 100%;*/
+
     background-color: azure;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .div1 {
-    /*position:absolute;*/
+
     width: 500px;
     height: 50px;
     margin-left: 33%;
@@ -68,7 +68,7 @@
 .foot {
     background-color: black;
     height: 100px;
-    /* bottom: 0px;*/
+
     width: 100%;
 }
 
@@ -128,16 +128,5 @@ margin:auto;
     margin-top:60px
 }
 
-/*.m#m2{
 
-    height:150px
-}
-
-.m#m3{
-
-
-height:300px;
-
-
-}*/
 

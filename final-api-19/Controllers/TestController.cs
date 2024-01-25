@@ -35,8 +35,7 @@ namespace api_final_19
         [HttpGet("{Name},{tid},{type}")]
         public async Task< ActionResult< Test>> Get(string tid,string Name,string type)
         {
-
-           
+          
             if (tid != "0")
             {
                 if (type == "name") 

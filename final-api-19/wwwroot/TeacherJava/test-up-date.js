@@ -71,7 +71,7 @@ btnq.style.height = "40px"
 btnq.style.color = "white"
 btnq.style.margin = "2px"
 btnq.id="btnq"
-/*btnq.addEventListener("click", function () { question(g, qjson, aj, m) })*/
+
 
 
 function divBuilder() {
@@ -177,18 +177,6 @@ async function findtest() {
     qj = []
     aj = []
     const ajson = []
-   // pdiv.replaceChildren()
-   ///* pdiv.style.marginTop="-520px"*/
-   // //div11.replaceChildren()
-   // div12.replaceChildren()
-   // div13.replaceChildren()
-   // div1.replaceChildren()
-   // div111.replaceChildren()
-    //const divh = document.getElementById("div2h")
-    //divh.textContent=""
-    
-    //style = "float:left;margin-left:45%;width:20%;height:500px;margin-top:-520px;background-color:azure"
-
     const teacher = localStorage.getItem("TeacherIdRef")
     const testname = document.getElementById("idt").value
     const type = document.getElementById("cars").value
@@ -196,44 +184,27 @@ async function findtest() {
     if (testname != "") {
         const res = await fetch(y1)
         if (res.status != 200 && res.status != 204) {
-            /* const pdiv = document.getElementById("div5")*/
 
-            pdiv.replaceChildren()
-            pdiv.style.float = "left"
-            pdiv.style.marginLeft = "45%"
-            pdiv.style.width = "20%"
-            pdiv.style.height = "500px"
-            pdiv.style.marginTop = "-520px"
-            pdiv.style.backgroundColor = "azure"
+            divBuilder2()
             const hError = document.createElement("h1")
-            hError.innerHTML = `Error ${res.status}`
+            hError.innerHTML = `Error ${res.status} `
             hError.style.marginTop = "0%"
-            pdiv.style.textAlign = "center"
             hError.style.fontSize = "50px"
-            pdiv.appendChild(hError)
+            div61.style.textAlign="center"
+            div61.appendChild(hError)
             return
+           
 
         }
 
         if (res.status == 204) {
-       
-            //pdiv.replaceChildren()
-            //pdiv.style.border = ""
-           
-            //pdiv.style.position = "absolut"
-            //pdiv.style.float = "left"
-            //pdiv.style.marginLeft = "40%"
-            //pdiv.style.width = "20%"
-            //pdiv.style.height = "500px"
-            //pdiv.style.marginTop = "-520px"
-            //pdiv.style.backgroundColor = "red"
-            
+ 
             divBuilder2()
             const hError = document.createElement("h1")
             hError.innerHTML = `No Test Has Been Found`
             hError.style.marginTop = "0%"
-           /* pdiv.style.textAlign = "center"*/
             hError.style.fontSize = "50px"
+          
             div61.appendChild(hError)
             return
         }
@@ -242,20 +213,13 @@ async function findtest() {
         if (res.status == 200) {
             const resq = await fetch(`../api/Question/${r1}`)
             if (resq.status != 200) {
-                /*const pdiv = document.getElementById("div5")*/
-                pdiv.replaceChildren()
-                pdiv.style.float = "left"
-                pdiv.style.marginLeft = "45%"
-                pdiv.style.width = "20%"
-                pdiv.style.height = "500px"
-                pdiv.style.marginTop = "-520px"
-                pdiv.style.backgroundColor = "azure"
+                divBuilder2()
                 const hError = document.createElement("h1")
                 hError.innerHTML = `Error ${resq.status}`
                 hError.style.marginTop = "0%"
-                pdiv.style.textAlign = "center"
                 hError.style.fontSize = "50px"
-                pdiv.appendChild(hError)
+                div61.style.textAlign = "center"
+                div61.appendChild(hError)
                 return
             }
             if (resq.status == 200) {
@@ -270,20 +234,13 @@ async function findtest() {
                 for (let ii = 0; ii < qid.length; ii++) {
                     const resa = await fetch(`../api/Answer/${qid[ii]}`)
                     if (resa.status != 200) {
-                       /* const pdiv = document.getElementById("div5")*/
-                        pdiv.replaceChildren()
-                        pdiv.style.float = "left"
-                        pdiv.style.marginLeft = "45%"
-                        pdiv.style.width = "20%"
-                        pdiv.style.height = "500px"
-                        pdiv.style.marginTop = "-520px"
-                        pdiv.style.backgroundColor = "azure"
+                        divBuilder2()
                         const hError = document.createElement("h1")
                         hError.innerHTML = `Error ${resa.status}`
-                        hError.style.marginTop = "50%"
-                        pdiv.style.textAlign = "center"
+                        hError.style.marginTop = "0%"
                         hError.style.fontSize = "50px"
-                        pdiv.appendChild(hError)
+                        div61.style.textAlign = "center"
+                        div61.appendChild(hError)
                         return
                     }
                     const yy = await resa.json()
@@ -318,60 +275,39 @@ async function findtest2(xx) {
     if (testname != "") {
         const res = await fetch(y1)
         if (res.status != 200 && res.status != 204) {
-           /* const pdiv = document.getElementById("div5")*/
-            pdiv.replaceChildren()
-            pdiv.style.float = "left"
-            pdiv.style.marginLeft = "45%"
-            pdiv.style.width = "20%"
-            pdiv.style.height = "500px"
-            pdiv.style.marginTop = "-520px"
-            pdiv.style.backgroundColor = "azure"
+            divBuilder2()
             const hError = document.createElement("h1")
             hError.innerHTML = `Error ${res.status}`
             hError.style.marginTop = "0%"
-            pdiv.style.textAlign = "center"
             hError.style.fontSize = "50px"
-            pdiv.appendChild(hError)
+            div61.style.textAlign = "center"
+            div61.appendChild(hError)
             return
         }
         const rr = await res.json()
         const r1 = rr.id
         if (res.status == 200 && rr.testName == "empty") {
             if (res.status == 204) {
-               /* const pdiv = document.getElementById("div5")*/
-                pdiv.replaceChildren()
-                pdiv.style.float = "left"
-                pdiv.style.marginLeft = "45%"
-                pdiv.style.width = "20%"
-                pdiv.style.height = "500px"
-                pdiv.style.marginTop = "-520px"
-                pdiv.style.backgroundColor = "azure"
+                divBuilder2()
                 const hError = document.createElement("h1")
                 hError.innerHTML = `No Test Has Been Found`
-                /*hError.style.marginTop = "0%"*/
-                pdiv.style.textAlign = "center"
+                hError.style.marginTop = "0%"
                 hError.style.fontSize = "50px"
-                pdiv.appendChild(hError)
+                div61.style.textAlign = "center"
+                div61.appendChild(hError)
                 return
             }
         }
         if (res.status == 200) {
             const resq = await fetch(`../api/Question/${r1}`)
             if (resq.status != 200) {
-               /* const pdiv = document.getElementById("div5")*/
-                pdiv.replaceChildren()
-                pdiv.style.float = "left"
-                pdiv.style.marginLeft = "45%"
-                pdiv.style.width = "20%"
-                pdiv.style.height = "500px"
-                pdiv.style.marginTop = "-520px"
-                pdiv.style.backgroundColor = "azure"
+                divBuilder2()
                 const hError = document.createElement("h1")
                 hError.innerHTML = `Error ${resq.status}`
                 hError.style.marginTop = "0%"
-                pdiv.style.textAlign = "center"
                 hError.style.fontSize = "50px"
-                pdiv.appendChild(hError)
+                div61.style.textAlign = "center"
+                div61.appendChild(hError)
                 return
             }
             if (resq.status == 200) {
@@ -384,20 +320,13 @@ async function findtest2(xx) {
                 for (let ii = 0; ii < qid.length; ii++) {
                     const resa = await fetch(`../api/Answer/${qid[ii]}`)
                     if (resa.status != 200) {
-                       /* const pdiv = document.getElementById("div5")*/
-                        pdiv.replaceChildren()
-                        pdiv.style.float = "left"
-                        pdiv.style.marginLeft = "45%"
-                        pdiv.style.width = "20%"
-                        pdiv.style.height = "500px"
-                        pdiv.style.marginTop = "-520px"
-                        pdiv.style.backgroundColor = "azure"
+                        divBuilder2()
                         const hError = document.createElement("h1")
                         hError.innerHTML = `Error ${resa.status}`
                         hError.style.marginTop = "0%"
-                        pdiv.style.textAlign = "center"
+                        div61.style.textAlign = "center"
                         hError.style.fontSize = "50px"
-                        pdiv.appendChild(hError)
+                        div61.appendChild(hError)
                         return
                     }
                     const yy = await resa.json()
@@ -422,32 +351,6 @@ async function findtest2(xx) {
 function showdata(m, qjson, aj) {
     divEmpty()
     divBuilder()
-  //  div1.replaceChildren()
-  //  /* style = "margin-left:5%;margin-top:280px;height:250px;width:36%;background-color:purple"*/
-  ///* div11.replaceChildren()*/
-  //  div11.style.marginLeft = "5%"
-  //  div11.style.marginTop = "280px"
-  //  div11.style.height = "250px"
-  //  div11.style.width = "36%"
-  //  div11.style.backgroundColor="azure"
-  //  div12.replaceChildren()
-  //  div12.style.marginTop = "20px"
-  //  div12.style.backgroundColor = "azure"
-  //  div12.style.float = "left"
-  //  div12.style.height = "220"
-  //  div12.style.width = "60%"
-  //  div13.replaceChildren()
-  //  /*style = "margin-top:20px;background-color:azure;float:left;height:220px;width:40%"*/
-  //  div13.style.marginTop = "20px"
-  //  div13.style.backgroundColor = "azure"
-  //  div13.style.float = "left"
-  //  div13.style.height = "220"
-  //  div13.style.width="40%"
-  //  div111.replaceChildren()
-  //  div111.style.backgroundColor="azure"
-  //  const z = document.getElementById("div5")
-  //  z.replaceChildren()
-  //  z.style.borderColor = "azure"
     const u = document.createElement("ul")
     const h1 = document.createElement("h1")
     const br = document.createElement("br")
@@ -508,12 +411,6 @@ function showdata(m, qjson, aj) {
     btntestd.style.color = "white"
     btntestd.addEventListener("click", function () { delete1(m) })
     const br11 = document.createElement("p")
-    //style = "margin-top:0%;flex-grow:1;margin-bottom:20px;float:left;margin-left:2%;background-color:azure;width:20%;min-height:250px"
-    //div1.style.marginBottom = "20px"
-    //div1.style.marginLeft = "2%"
-    //div1.style.width = "20%"
-    //div1.style.minHeight = "250px"
-    //div1.style.float="left"
     u.appendChild(h1)
     u.appendChild(h2)
     u.appendChild(h3)
@@ -534,15 +431,6 @@ function showdata(m, qjson, aj) {
     const h11 = document.createElement("p")
     const h12 = document.createElement("p")
     let n = y + 1
-    //const btnq = document.createElement("button")
-    //btnq.style.backgroundColor = "green"
-    //btnq.innerHTML = "update question"
-    //let g = 0
-    //btnq.style.cursor = "pointer"
-    //btnq.style.height = "40px"
-    //btnq.style.color = "white"
-    //btnq.style.margin = "2px"
-    //btnq.addEventListener("click", function () { question(g, qjson, aj, m) })
     const btnd = document.createElement("button")
     btnd.style.backgroundColor = "green"
     btnd.innerHTML = "delete question"
@@ -550,7 +438,7 @@ function showdata(m, qjson, aj) {
     btnd.style.height = "40px"
     btnd.style.color = "white"
     btnd.style.margin = "2px"
-    btnd.addEventListener("click", function () { deletequestion(g, qjson, aj, m) })
+    btnd.addEventListener("click", function () { deletequestion(count, qjson, aj, m) })
     const btnaa = document.createElement("button")
     btnaa.style.backgroundColor = "green"
     btnaa.innerHTML = "add text question"
@@ -608,7 +496,6 @@ function showdata(m, qjson, aj) {
             u1.appendChild(out)
             u1.style.marginLeft ="-40px"
         }
-        /*const hh1=document.getElementById("div2h")*/
         h9.textContent = ` Question-${n}: `
         h9.style.fontSize="20px"
         u2.appendChild(h11)
@@ -630,17 +517,14 @@ function showdata(m, qjson, aj) {
         h11.style.fontWeight = "bold"
         u2.appendChild(h11)
     }
-    //div11.style.border = "dotted"
-    //div11.style.width = "50%"
     if (ty == 1) {
-       /* div11.style.height = "300px"*/
+
     }
-    else { /*div11.style.height = "300px"*/ }
-    /*div11.style.marginLeft = "10%"*/
+    else { }
+
     div7.appendChild(u1)
     div8.appendChild(u2)
-    //div111.style.marginTop = "5px"
-    //div111.style.marginLeft = "20%"
+
     const br1 = document.createElement("p")
     div10.appendChild(br1)
     div10.appendChild(btnn)
@@ -658,7 +542,6 @@ function next(y, aj, qjson, m) {
 
     if (qjson.length > y) {
 
-/*        div6.replaceChildren()*/
         div7.replaceChildren()
         div8.replaceChildren()
         const u1 = document.createElement("ul")
@@ -669,12 +552,7 @@ function next(y, aj, qjson, m) {
         const h12 = document.createElement("p")
         let n = y + 1
         h9.textContent = ` Question-${n}: `
-        //const btnq = document.createElement("button")
-        //btnq.style.backgroundColor = "azure"
-        //btnq.innerHTML = "update question"
-        //btnq.style.cursor = "pointer"
-        //btnq.style.height = "40px"
-        //btnq.addEventListener("click", function () { question(y, qjson, aj, m) })
+
         const btnq = document.getElementById("btnq")
         btnq.replaceChildren()
         btnq.style.backgroundColor = "green"
@@ -685,13 +563,14 @@ function next(y, aj, qjson, m) {
         btnq.style.color = "white"
         btnq.style.margin = "2px"
         btnq.id = "btnq"
+        count = count + 1
         btnq.addEventListener("click", function () { question(y, qjson, aj, m) })
         const btnd = document.createElement("button")
         btnd.style.backgroundColor = "azure"
         btnd.innerHTML = "delete question"
         btnd.style.cursor = "pointer"
         btnd.style.height = "40px"
-        btnd.addEventListener("click", function () { deletequestion(y, qjson, aj, m) })
+        btnd.addEventListener("click", function () { deletequestion(count, qjson, aj, m) })
         const btnaa = document.createElement("button")
         btnaa.style.backgroundColor = "azure"
         btnaa.innerHTML = "add text question"
@@ -712,7 +591,7 @@ function next(y, aj, qjson, m) {
         btnn.style.backgroundColor = "azure"
         btnn.style.cursor = "pointer"
         btnn.style.height = "40px"
-        count = count + 1
+       
         btnn.addEventListener("click", function () { back(count, aj, qjson, m) })
         const btnb = document.createElement("button")
         btnb.id = "btnb"
@@ -749,30 +628,12 @@ function next(y, aj, qjson, m) {
         }
         h12.textContent = `the right answer is ${l}`
         u2.appendChild(h12)
-        //div11.style.border = "dotted"
-        //div11.style.width = "50%"
         if (ty == 1) {
-           /* div11.style.height = "300px"*/
         }
-        else { /*div11.style.height = "300px"*/ }
-        /*div11.style.marginLeft = "10%"*/
+        else {  }
         div7.appendChild(u1)
         div8.appendChild(u2)
-        //div111.style.marginTop = "5px"
-        //div111.style.marginLeft = "120px"
-        //div10.replaceChildren()
-        //div10.style.marginLeft = "-25%"
-        //div10.style.width = "150%"
-        //div10.style.height = "70px"
-        //div10.style.marginTop = "35px"
-        //div10.style.backgroundColor = "azure"
-        //div10.style.marginBottom = "30px"
-        //div10.appendChild(btnn)
-        //div10.appendChild(btnb)
-        //div10.appendChild(btnq)
-        //div10.appendChild(btnd)
-        //div10.appendChild(btnaa)
-        //div10.appendChild(btnaq)
+       
     }
 }
 
@@ -782,6 +643,7 @@ function back(y, aj, qjson, m) {
 
 
     if (0 < y) {
+        count = count - 1
         div7.replaceChildren()
         div8.replaceChildren()
         const u1 = document.createElement("ul")
@@ -870,24 +732,16 @@ function back(y, aj, qjson, m) {
         }
         h12.textContent = `the right answer is ${l}`
         u2.appendChild(h12)
-        //div11.style.border = "dotted"
-        //div11.style.width = "50%"
+
         if (ty == 1) {
-            /*div11.style.height = "300px"*/
+
         }
-        else { /*div11.style.height = "300px"*/ }
-       /* div11.style.marginLeft = "10%"*/
+        else { }
+  
         div7.appendChild(u1)
         div8.appendChild(u2)
-        //div111.style.marginTop = "5px"
-        //div111.style.marginLeft = "120px"
-        //div111.appendChild(btnn)
-        //div111.appendChild(btnb)
-        //div111.appendChild(btnq)
-        //div111.appendChild(btnd)
-        //div111.appendChild(btnaa)
-        //div111.appendChild(btnaq)
-        count = count - 1
+
+       
     }
 }
 
@@ -895,7 +749,7 @@ function back(y, aj, qjson, m) {
 //this func creat the platform for the the update test div
 function place(rr) {
     let i = 1
-   /* const z = document.getElementById("div5")*/
+
     div9.replaceChildren()
     div9.style.float = "left"
     div9.style.marginLeft = "130%"
@@ -925,7 +779,6 @@ function place(rr) {
 
 //this func is uploading the the data for update test div
 function updatetest(rr) {
-    /*const z = document.getElementById("div5")*/
     let a = 1
     const n1 = document.createElement("label")
     n1.id = "n1"
@@ -971,7 +824,6 @@ function updatetest(rr) {
         hours = `and ${mm[1]} minutes `
     }
     n3.innerHTML = `Total Time: ${yname}  `
-    /*n3.innerHTML = `total time :${rr.totalTime}`*/
     n4.innerHTML = `start time :${rr.startTime}`
     n5.innerHTML = `is question random ?`
     const z1 = document.getElementById(`m1${a}`)
@@ -1083,38 +935,30 @@ async function put1(d) {
     if (t51 == "yes") { t5 = 1 }
     const rrrer = rr
     if (t1 == "") {
-       /* t1 = rr.testName*/
     }
     if (t2 == "") {
-       /* t2 = rr.testDate*/
     }
     if (t3 == "") {
-        /*t3 = rr.totalTime*/
     }
     if (t4 == "") {
-       /* t4 = rr.startTime*/
     }
     let z1 = t1
     let z2 = t2
-   /* let p2 = t2*/
     let z3 = t4
-    /*let p3 = t4*/
     let z4 = t3
     let z5 = t5
-    let z7 = parseInt(localStorage.getItem("TeacherIdRef"))
-    let z6 = d.id
-    const new1 = { Id: z6, testName: `${z1}`, testDate: `${z2}`, startTime: `${z3}`, totalTime: z4, random: z5, teacherIdRef: z7 }
+    let z7 = localStorage.getItem("TeacherIdRef")
+    let z6 = `${d.id}`
+    const new1 = { Id: z6, testName: `${z1}`, testDate: `${z2}`, startTime: `${z3}`, totalTime: z4, random: z5, teacherIdRef: `${z7}` }
     const y1 = "https://localhost:7115/../api/Test"
     const response = await fetch(y1, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(new1) })
     if (response.status != 200) {
-        const pdiv = document.getElementById("div5")
-        pdiv.replaceChildren()
+        divBuilder2()
         const hError = document.createElement("h1")
         hError.innerHTML = `Error ${response.status}`
-        hError.style.marginTop = "50%"
-        pdiv.style.textAlign = "center"
+        hError.style.marginTop = "0%"
         hError.style.fontSize = "50px"
-        pdiv.appendChild(hError)
+        div61.appendChild(hError)
         return
     }
 
@@ -1126,11 +970,7 @@ async function put1(d) {
             labAlert.innerHTML = " Name Exist Choose A Different Name"
             return
         }
-        //else {
-        //    const labAlert = document.getElementById("n1")
-        //    labAlert.style.color = "black"
-        //    labAlert.innerHTML = `test name : ${rr.testName}`
-        //}
+
         if (resjj.testDate == "empty") {
             const labAlert2 = document.getElementById("n2")
             labAlert2.style.color = "red"
@@ -1138,13 +978,7 @@ async function put1(d) {
             return
         
         }
-        //else {
-        //    const labAlert2 = document.getElementById("n2")
-        //    labAlert2.style.color = "red"
-        //    labAlert2.innerHTML = `test date :${rr.testDate}`
-            
-           
-        //}
+
         localStorage.setItem("jjj", `${resjj.testName}`)
         ee = 1
         location.reload()
@@ -1166,13 +1000,6 @@ async function put1(d) {
 function question(y, qjson, aj, m) {
 
     if (qjson[y].picture == "") {
-        /* const pdiv = document.getElementById("div5")*/
-        //pdiv.style.float = "left"
-        //pdiv.style.marginLeft = "15%"
-        //pdiv.style.width = "20%"
-        //pdiv.style.height = "500px"
-        //pdiv.style.marginTop = "-520px"
-        //pdiv.style.backgroundColor = "azure"
         div9.replaceChildren()
         div9.style.float = "left"
         div9.style.marginLeft = "130%"
@@ -1180,14 +1007,7 @@ function question(y, qjson, aj, m) {
         div9.style.height = "500px"
         div9.style.marginTop = "-650px"
         div9.style.backgroundColor = "aquamarine"
-        //pdiv.style.float = "left"
-        //pdiv.style.marginLeft = "10%"
-        //pdiv.style.width = "20%"
-        //pdiv.style.height = "500px"
-        //pdiv.style.marginTop = "-520px"
-        //pdiv.style.backgroundColor = "red"
-        //pdiv.style.border = "dotted"
-       /* pdiv.style.textAlign="justify"*/
+
         const h1 = document.createElement("h3")
         h1.style.marginLeft = "50px"
         h1.textContent = ` question${y + 1}`
@@ -1258,7 +1078,6 @@ function question(y, qjson, aj, m) {
     }
     else {
         let f = ""
-        /*const pdiv = document.getElementById("div5")*/
         div9.replaceChildren()
         div9.style.float = "left"
         div9.style.marginLeft = "130%"
@@ -1282,7 +1101,7 @@ function question(y, qjson, aj, m) {
         leb.id = "lebPic"
         leb.style.marginLeft = "50px"
         leb.setAttribute("for", "files")
-        leb.style.backgroundColor = "azure"
+        leb.style.backgroundColor = "aquamarine"
         div9.appendChild(leb)
         div9.appendChild(brQ.cloneNode())
         div9.appendChild(pic)
@@ -1447,14 +1266,12 @@ async function questionupdate(y, qjson, aj, b, m, f) {
     const response = await fetch(y112, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(n11) })
     const response1 = response.json()
     if (response.status != 200) {
-        const pdiv = document.getElementById("div5")
-        pdiv.replaceChildren()
+        divBuilder2()
         const hError = document.createElement("h1")
         hError.innerHTML = `Error ${response.status}`
-        hError.style.marginTop = "50%"
-        pdiv.style.textAlign = "center"
+        hError.style.marginTop = "0%"
         hError.style.fontSize = "50px"
-        pdiv.appendChild(hError)
+        div61.appendChild(hError)
         return
     }
     else {
@@ -1474,13 +1291,13 @@ async function questionupdate(y, qjson, aj, b, m, f) {
                 const response11 = await fetch(y11, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(n11) })
                 if (response11.status != 200) {
                     const pdiv = document.getElementById("div5")
-                    pdiv.replaceChildren()
+                    divBuilder2()
                     const hError = document.createElement("h1")
                     hError.innerHTML = `Error ${response11.status}`
-                    hError.style.marginTop = "50%"
-                    pdiv.style.textAlign = "center"
+                    hError.style.marginTop = "0%"
                     hError.style.fontSize = "50px"
-                    pdiv.appendChild(hError)
+                    div61.appendChild(hError)
+                    return
                 }
             }
         }
@@ -1495,7 +1312,6 @@ async function questionupdate(y, qjson, aj, b, m, f) {
 //this func upload the delete test to the screan
 function delete1(m) {
 
-   /* const pdiv = document.getElementById("div5")*/
     div9.replaceChildren()
     div9.style.float = "left"
     div9.style.marginLeft = "130%"
@@ -1529,26 +1345,23 @@ async function deletetest(m) {
     const y1 = `../api/Test/${m.id}`
     const response11 = await fetch(y1, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify() })
     if (response11.status != 200) {
-        const pdiv = document.getElementById("div5")
-        pdiv.replaceChildren()
+        divBuilder2()
         const hError = document.createElement("h1")
-        hError.innerHTML = `Error ${response200.status}`
-        hError.style.marginTop = "50%"
-        pdiv.style.textAlign = "center"
+        hError.innerHTML = `Error ${response11.status}`
+        hError.style.marginTop = "0%"
         hError.style.fontSize = "50px"
-        pdiv.appendChild(hError)
+        div61.appendChild(hError)
         return
     }
     const resjson = await response11.json()
     if (response11.status == 200 && resjson == 1) {
-        const pdiv = document.getElementById("div5")
-        pdiv.replaceChildren()
+        divBuilder2()
         const hError = document.createElement("h1")
-        hError.innerHTML = `Test Has Been Delete`
-        hError.style.marginTop = "50%"
-        pdiv.style.textAlign = "center"
+        hError.innerHTML = `Error ${response11.status}`
+        hError.style.marginTop = "0%"
         hError.style.fontSize = "50px"
-        pdiv.appendChild(hError)
+        div61.appendChild(hError)
+        return
         setTimeout(function () { window.close("https://localhost:7115/TeacherHtml/updatetest.html") }, 3000)
     }
 }
@@ -1558,7 +1371,6 @@ async function deletequestion(g, qjson, aj, m) {
 
     if (qjson.length > 0) {
 
-      /*  const pdiv = document.getElementById("div5")*/
         div9.replaceChildren()
         div9.style.float = "left"
         div9.style.marginLeft = "130%"
@@ -1592,14 +1404,12 @@ async function deleteQ(g, qjson, m) {
     const y1 = `../api/Question/${qjson[g].id}`
     const response11 = await fetch(y1, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify() })
     if (response11.status != 200) {
-        const pdiv = document.getElementById("div5")
-        pdiv.replaceChildren()
+        divBuilder2()
         const hError = document.createElement("h1")
-        hError.innerHTML = `Error ${response200.status}`
-        hError.style.marginTop = "50%"
-        pdiv.style.textAlign = "center"
+        hError.innerHTML = `Error ${response11.status}`
+        hError.style.marginTop = "0%"
         hError.style.fontSize = "50px"
-        pdiv.appendChild(hError)
+        div61.appendChild(hError)
         return
     }
     const resjson = await response11.json()
@@ -1613,7 +1423,6 @@ async function deleteQ(g, qjson, m) {
 // this func upload the the picture question to add question
 function addpic(y, qjson, aj, m) {
 
-    /*const pdiv = document.getElementById("div5")*/
     div9.replaceChildren()
     div9.style.float = "left"
     div9.style.marginLeft = "130%"
@@ -1637,7 +1446,7 @@ function addpic(y, qjson, aj, m) {
     leb.id = "labPic"
     leb.style.marginLeft = "50px"
     leb.setAttribute("for", "files")
-    leb.style.backgroundColor = "azure"
+    leb.style.backgroundColor = "aquamarine"
     div9.appendChild(leb)
     div9.appendChild(brP.cloneNode())
     div9.appendChild(pic)
@@ -1717,7 +1526,6 @@ function addpic(y, qjson, aj, m) {
 // this func upload the add text question to the screan
 function addtext(y, qjson, aj, m) {
 
-    /*const pdiv = document.getElementById("div5")*/
     div9.replaceChildren()
     div9.style.float = "left"
     div9.style.marginLeft = "130%"
@@ -1871,19 +1679,17 @@ async function questionAdd(y, qjson, aj, b, m, f) {
         return
     }
     const a1 = m.id
-    const a = 0
+    const a = "0"
     const n11 = { id: a, testIdRef: a1, questions: `${qu}`, picture: `${pic}` }
     const y112 = 'https://localhost:7115/../api/Question'
     const response200 = await fetch(y112, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(n11) })
     if (response200.status != 200) {
-        const pdiv = document.getElementById("div5")
-        pdiv.replaceChildren()
+        divBuilder2()
         const hError = document.createElement("h1")
         hError.innerHTML = `Error ${response200.status}`
-        hError.style.marginTop = "50%"
-        pdiv.style.textAlign = "center"
+        hError.style.marginTop = "0%"
         hError.style.fontSize = "50px"
-        pdiv.appendChild(hError)
+        div61.appendChild(hError)
         return
     }
     else {
@@ -1895,23 +1701,22 @@ async function questionAdd(y, qjson, aj, b, m, f) {
             if (b1 != "") {
                 const comper = parseInt(an5) - 1
                 if (h == comper) {
-                    b3 = 1
+                    b3 = "1"
 
                 }
-                else { b3 = 0 }
+                else { b3 = "0" }
                 const b2 = response1.id
+                
                 const n11 = { id: b3, answer1: `${b1}`, questionIdRef: b2, rightWorng: b3 }
                 const y11 = 'https://localhost:7115/../api/Answer'
                 const response11 = await fetch(y11, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(n11) })
                 if (response11.status != 200) {
-                    const pdiv = document.getElementById("div5")
-                    pdiv.replaceChildren()
+                    divBuilder2()
                     const hError = document.createElement("h1")
                     hError.innerHTML = `Error ${response11.status}`
-                    hError.style.marginTop = "50%"
-                    pdiv.style.textAlign = "center"
+                    hError.style.marginTop = "0%"
                     hError.style.fontSize = "50px"
-                    pdiv.appendChild(hError)
+                    div61.appendChild(hError)
                     return
                 }
             }

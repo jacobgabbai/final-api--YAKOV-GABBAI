@@ -741,7 +741,7 @@ function next1(kkk,a, c, b) {
                     if (rq != null) {
                         ci = ii
 
-                        document.getElementById(`idr${ii}`).checked = true
+                       /* document.getElementById(`idr${ii}`).checked = true*/
                     }
                 }
 
@@ -864,7 +864,7 @@ function back1(a,c, b) {
                 rq = localStorage.getItem(`chooseanswer${kk}${ii}`)
                 if (rq != null) {
                     ci = ii
-                    document.getElementById(`idr${ii}`).checked = true
+                   /* document.getElementById(`idr${ii}`).checked = true*/
                     break
                 }
             }
@@ -1038,8 +1038,11 @@ async function subTest(c, b) {
         let rm = 0
         if (quest.length > 0) {
             for (let rl = 0; rl < quest.length; rl++) {
-
-                const n11 = { testEx1IdRef: r1.id, questions: quest[rl].questions }
+                let PQ = quest[rl].questions
+                if (PQ == "") {
+                    PQ=quest[rl].picture
+                }
+                const n11 = { testEx1IdRef: r1.id, questions: PQ }
                 const y12 = 'https://localhost:7115/../api/QuesEx'
                 const response1 = await fetch(y12, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(n11) })
                 if (response1.status == 200) {

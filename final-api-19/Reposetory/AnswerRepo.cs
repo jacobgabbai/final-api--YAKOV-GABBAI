@@ -10,16 +10,7 @@ namespace api_final_19.Reposetory
            
             List<Answer>? R = context.Answers.ToList();
             Answer? tt = new Answer();
-            //if (R.Count == 0)
-            //{
-            //    tt.Id = 1;
-
-            //}
-            //else
-            //{
-            //    long e = R.Max(a => a.Id);
-            //    tt.Id = e + 1;
-            //}
+         
             string guid = Guid.NewGuid().ToString();
             tt.Id = guid;
             tt.Answer1 = v.Answer1;
@@ -49,15 +40,7 @@ namespace api_final_19.Reposetory
         {           
             List<Answer>? R = context.Answers.ToList();
             Answer tt = new Answer();
-            //if (R.Count == 0)
-            //{
-            //    tt.Id = 1;
-            //}
-            //else
-            //{
-            //    long e = R.Max(a => a.Id);
-            //    tt.Id = e + 1;
-            //}
+      
             string guid = Guid.NewGuid().ToString();
             tt.Id = guid;
             Test? rr = new Test();

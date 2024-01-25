@@ -25,17 +25,6 @@ namespace api_final_19.Reposetory
             Question? tt = new Question();
             Test? rr = new Test();
             int i = 1;
-            //if (R != null)
-            //{
-            //    foreach (Question a in R)
-            //    {
-            //        if (a.Id >= i)
-            //        {
-            //            i += 1;
-            //        }
-
-            //    }
-            //}
             string guid = Guid.NewGuid().ToString();
             tt.Id = guid;
             tt.Picture = v.Picture;
@@ -92,13 +81,7 @@ namespace api_final_19.Reposetory
             List<Question>? R = context.Questions.ToList();
             Question? tt = new Question();
             long i = 0;
-            //if (R.Count > 0)
-            //{
-            //    long e = R.Max(r => r.Id);
-            //     i = 1 + e;
-            //}
-            //else {  i=1; }
-            //tt.Id = i;
+        
             string guid = Guid.NewGuid().ToString();
            tt.Id = guid;
             tt.TestIdRef = v.TestIdRef;

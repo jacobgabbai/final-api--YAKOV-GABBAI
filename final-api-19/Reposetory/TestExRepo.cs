@@ -12,16 +12,7 @@ namespace api_final_19.Reposetory
             TestEx1 tt = new TestEx1();
          
             testEx1s = context.TestEx1s.ToList();
-            //if (testEx1s.Count == 0)
-            //{
-            //    tt.Id = 1;
-
-            //}
-            //else
-            //{
-            //    long e = testEx1s.Max(a => a.Id);
-            //    tt.Id = e + 1;
-            //}
+        
             string guid = Guid.NewGuid().ToString();
             tt.Id = guid;
             tt.StuName = t.StuName;

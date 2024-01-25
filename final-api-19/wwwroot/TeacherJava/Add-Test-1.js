@@ -157,12 +157,10 @@ async function SaveTest() {
                 div.replaceChildren()
                 div.style.height = "500px"
                 div.style.width = "50%"
-               /* div.style.position = "absulote"*/
                 div.style.marginLeft = "0px"
                 div.style.backgroundColor = "azure"
                 const h2 = document.createElement("h2")
                 h2.textContent = "add question"
-              /*  divError1.style.marginLeft="0%"*/
                 div.appendChild(h2)
 
                 const uu = document.createElement("div")
@@ -223,16 +221,9 @@ function er(r) {
             divError1.replaceChildren()
         }
        
-       
-
-
-        //divError1.style.height = "300px"
-        //divError1.style.width = "30%"
-        //divError1.style.fontSize = "50px"
         const hdiv=document.createElement("h1")
         hdiv.innerHTML=r        
-        //divError1.style.marginLeft = "30%px"
-        //divError1.style.marginTop = "0px"
+
         divError1.appendChild(hdiv)
       
         

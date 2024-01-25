@@ -10,15 +10,7 @@ namespace api_final_19.Reposetory
             List<QuestionEx> q = new List<QuestionEx>();
             QuestionEx qq = new QuestionEx();
             q = context.QuestionExes.ToList();
-            //if (q.Count == 0)
-            //{
-            //    qq.Id = 1;
-            //}
-            //else
-            //{
-            //    long e = q.Max(a => a.Id);
-            //    qq.Id = e + 1;
-            //}
+      
             string guid = Guid.NewGuid().ToString();
             qq.Id = guid;
             qq.TestEx1IdRef = d.TestEx1IdRef;

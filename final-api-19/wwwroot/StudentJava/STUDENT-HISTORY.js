@@ -85,7 +85,6 @@ async function testh() {
         td3.innerHTML = "mistakes"
         td3.style.border = "2px solid black"
         td3.style.padding = "5px"
-        /*const sp = document.createElement("spacer")*/
         tr1.appendChild(td1)
         tr1.appendChild(td2)
         tr1.appendChild(td3)
@@ -166,10 +165,34 @@ async function testh() {
                 p2.textContent = `the answer you choose is -  ${ww[0]}`
                 const p3 = document.createElement("p")
                 const q1 = localStorage.getItem(`question${a}${z}`)
-                p3.textContent = `Question-${z + 1} "${q1}"`
-                p3.style.marginLeft = "25%"
-                p3.style.fontWeight = "bold"
-                divwr.appendChild(p3)
+                const data = q1.split(":")
+                
+                if (data[0] != "data") {
+                    p3.textContent = `Question-${z + 1} "${q1}"`
+                    p3.style.marginLeft = "25%"
+                    p3.style.fontWeight = "bold"
+                    divwr.appendChild(p3)
+                }
+                else {
+                    p3.textContent = `Question-${z + 1}`
+                    p3.style.marginLeft = "25%"
+                    p3.style.fontWeight = "bold"
+                    divwr.appendChild(p3)
+                    const out = document.createElement("output")
+                    out.style.height = "50px"
+                    const divo = document.createElement("div")
+                    divo.style.display = "flex"
+                    divo.style.marginLeft = "35%"
+                    divo.style.height = "70px"
+                    let gg = q1
+                    if (gg != "") {
+                       
+                        divo.innerHTML = `<img src="${gg}"/>`
+                        out.appendChild(divo)
+                        divwr.appendChild(out)
+                    }
+                }
+            
                 divwr.appendChild(p2)
                 divwr.appendChild(p1)
             }

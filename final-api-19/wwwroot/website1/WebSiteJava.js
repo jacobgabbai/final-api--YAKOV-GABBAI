@@ -60,9 +60,7 @@ function load() {
     divm.appendChild(div2)
 
 }
-/*const divm = document.getElementById("m2")*/
 const divm = document.createElement("div")
-/*const divn = document.getElementById("m3")*/
 const divn = document.createElement("div")
 
 const center = document.getElementById("center")
@@ -241,7 +239,7 @@ function tea() {
     if (regiOn == 2) {
         regis()
     }
-    /*  regiOn = 0*/
+  
 
 }
 
@@ -275,7 +273,6 @@ function logs() {
     label1.style.marginLeft = "-32%"
     label1.innerHTML = "Email"
 
-    /*input1.style.marginLeft = "20%"*/
 
     const label2 = document.createElement("label")
     label2.for = "password1"
@@ -288,7 +285,6 @@ function logs() {
     input2.id = "inp2"
 
     input2.style.margin = "auto"
-    /*  input2.style.marginLeft = "20%"*/
     input2.placeholder = "enter your password"
     const btn = document.createElement("button")
     btn.addEventListener("click", function () { StuLog(checkme) })
@@ -297,28 +293,12 @@ function logs() {
     btn.style.backgroundColor = "azure"
     btn.innerHTML = "submit"
     btn.style.marginLeft = "60%"
-    /*btn.style.marginLeft = "80%"*/
+
     btn.style.borderRadius = "10px"
     btn.style.color = "white"
     btn.style.backgroundColor = "black"
     btn.style.cursor = "pointer"
 
-    //const p = document.createElement("p")
-    //p.textContent = "  "
-    //p.style.marginLeft = "20%"
-    //p.id = "p"
-    //ul.appendChild(label1)
-    //ul.appendChild(br.cloneNode())
-    //ul.appendChild(input1)
-    //ul.appendChild(br.cloneNode())
-
-    //ul.appendChild(br.cloneNode())
-    //ul.appendChild(label2)
-    //ul.appendChild(br.cloneNode())
-    //ul.appendChild(input2)
-
-    //ul.appendChild(br.cloneNode())
-    //ul.appendChild(br.cloneNode())
     divn.style.width = "400px"
 
     divn.style.backgroundColor = "aquamarine"
@@ -339,8 +319,6 @@ function logs() {
 
     divn.appendChild(br.cloneNode())
 
-    /* divn.appendChild(ul)*/
-    /* divn.appendChild(p)*/
     divn.appendChild(btn)
     center.appendChild(divn)
     let yy = 0
@@ -374,7 +352,7 @@ function regis() {
     divn.style.height = "380px"
     const h1 = document.createElement("h2")
     h1.textContent = "register"
-    /* h1.style.textAlign = "center"*/
+   
 
     const br = document.createElement("br")
 
@@ -387,7 +365,7 @@ function regis() {
     input1.id = "inp11"
     input1.placeholder = "enter your name"
     input1.style.margin = "auto"
-    /* input1.style.marginLeft = "15%"*/
+ 
     const label11 = document.createElement("label")
     label11.for = "input11"
     label11.id = "label11"
@@ -401,7 +379,7 @@ function regis() {
     input2.id = "inp22"
     input2.placeholder = "enter your mail"
     input2.style.margin = "auto"
-    /*input2.style.marginLeft = "15%"*/
+
     const label22 = document.createElement("label")
     label22.for = "input22"
     label22.id = "label22"
@@ -427,7 +405,7 @@ function regis() {
     const select = document.createElement("select")
     select.id = "select1"
     select.style.margin = "auto"
-    /* select.style.marginLeft = "15%"*/
+   
     const option2 = document.createElement("option")
     option2.value = "050"
     option2.innerHTML = "050"
@@ -456,7 +434,7 @@ function regis() {
     input4.id = "inp44"
     input4.placeholder = "enter your Id"
     input4.style.margin = "auto"
-    /* input4.style.marginLeft = "15%"*/
+
     input4.name = "input44"
     const label44 = document.createElement("label")
     label44.for = "input44"
@@ -469,7 +447,7 @@ function regis() {
     input7.value = ""
     input7.id = "inp77"
     input7.style.margin = "auto"
-    /* input7.style.marginLeft = "15%"*/
+  
     input7.name = "input77"
     input7.placeholder = "enter your passward"
     const label77 = document.createElement("label")
@@ -492,13 +470,13 @@ function regis() {
     label55.innerHTML = "kkkkk"
     const btn = document.createElement("button")
     btn.addEventListener("click", function () { valid() })
-    /* btn.type = "submit"*/
+   
     btn.style.borderRadius = "10px"
     btn.style.color = "white"
     btn.style.backgroundColor = "black"
     btn.style.cursor = "pointer"
     btn.innerHTML = "Submit"
-    /* btn.style.margin = "auto"*/
+   
     btn.style.marginLeft = "70%"
     btn.style.marginTop = "-50px"
 
@@ -538,17 +516,11 @@ function regis() {
     divn.appendChild(br.cloneNode())
     divn.appendChild(input7)
 
-    //ul.appendChild(br.cloneNode())
-    //ul.appendChild(br.cloneNode())
-    divn.appendChild(btn)
-    // divn.appendChild(input5)
-    /* divn.appendChild(ul)*/
-    center.appendChild(divn)
-    //divn.appendChild(br.cloneNode())
-    //divn.appendChild(br.cloneNode())
-    //divn.appendChild(br.cloneNode())
 
-    /*divn.appendChild(btn)*/
+    divn.appendChild(btn)
+  
+    center.appendChild(divn)
+
 
     if (l == false) {
         l = true
@@ -678,7 +650,7 @@ async function valid() {
 
                                     }
                                 }
-                                /* else { alert(rep.status) }*/
+                              
 
                             }
 
@@ -752,7 +724,7 @@ async function valid() {
 
                                     }
                                 }
-                                /*else { alert(rep.status) }*/
+                                
 
 
 
@@ -931,14 +903,12 @@ async function StuLog(checkme) {
             h1.style.marginTop = "25%"
             h1.style.fontSize = "30px"
             divn.appendChild(h1)
-            /*alert("Error" + rep.status)*/
+            
         }
 
         const v = await rep.json()
         if (rep.status == 200 && v.stuName != "dont match") {
-            //let p = document.getElementById("p")
-            //p.textContent = ""
-            //p.style.color = "red"
+           
 
             localStorage.setItem("stuName", v.stuName)
             localStorage.setItem("stuId", v.stuId)
@@ -953,30 +923,14 @@ async function StuLog(checkme) {
         else if (rep.status == 200) {
             clearD()
             setTimeout(logs,5000)
-            //let p = document.getElementById("p")
-            //p.textContent = "no correct data was founde"
-            //p.style.color = "red"
+            
 
 
         }
 
 
     }
-    //else {
-    //    if (in1 == '') {
-    //        let label1 = document.getElementById("label1")
-    //        label1.style.color = "red"
-    //        label1.innerHTML = "* Must filds "
-    //        label1.style.marginLeft = "-28%"
-    //    }
-    //    if (in2 == '') {
-    //        let label1 = document.getElementById("label2")
-    //        label1.style.color = "red"
-    //        label1.innerHTML = "* Must filds "
-    //        label1.style.marginLeft = "-28%"
-    //    }
-
-    //}
+   
 
 if (checkme == 2) {
     const in1 = document.getElementById("inp1").value
@@ -1008,27 +962,12 @@ if (checkme == 2) {
         else if (a.status == 200 && a1.teacherName == "dont match") {
             clearD()
             setTimeout(logs, 5000)
-            //let p = document.getElementById("p")
-            //p.textContent = "no correct data was founde"
-            //p.style.color = "red"
+         
         }
 
 
     }
-    //else {
-    //    if (in1 == '') {
-    //        let label1 = document.getElementById("label1")
-    //        label1.style.color = "red"
-    //        label1.innerHTML = "* Must filds "
-    //        label1.style.marginLeft = "-28%"
-    //    }
-    //    if (in2 == '') {
-    //        let label1 = document.getElementById("label2")
-    //        label1.style.color = "red"
-    //        label1.innerHTML = "* Must filds "
-    //        label1.style.marginLeft = "-28%"
-    //    }
-    //}
+  
 }
 
 }
