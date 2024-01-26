@@ -263,6 +263,7 @@ function dissplay(a, b, c) {
         let bc = (b - 1) * 110 + 200
         let bcs = bc.toString()
         divwr11.style.height = "300px"
+        
         divwr11.style.overflow = "scroll"
         const w = localStorage.getItem(`answersW${a}${z}`)
         const ww = w.split("+")

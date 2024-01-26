@@ -958,10 +958,27 @@ function back1(a,c, b) {
 }
 
 // this func uploads the test data to the surver
-
+let countA=0
 async function subTest(c, b) {
 
     let countq0 = []
+    for (let qq = 0; qq < b.length; qq++) {
+        const loo = localStorage.getItem(`answercount${qq}`)
+        if (loo == 0) {
+        countA++
+        }
+
+    }
+    if (countA < b.length) {
+        let z = b.length - countA;
+        const h1 = document.createElement("h1")
+        h1.textContent = `question ${z} has not been answered`
+
+        div223.style.textAlign = "center"
+        div223.appendChild(h1)
+
+        setTimeout(() => { div223.removeChild(h1) }, 3000)
+    }
     for (let qq = 0; qq < b.length; qq++) {
         const lo = localStorage.getItem(`answercount${qq}`)
         if (lo == 0 && timeout == 0) {
