@@ -935,6 +935,34 @@ async function StuLog(checkme) {
 if (checkme == 2) {
     const in1 = document.getElementById("inp1").value
     const in2 = document.getElementById("inp2").value
+    if (in1 != '') {
+        let label1 = document.getElementById("label1")
+        label1.style.color = "black"
+        label1.innerHTML = "Email"
+        label1.style.marginLeft = "-32%"
+    }
+    else {
+        let label1 = document.getElementById("label1")
+        label1.style.color = "red"
+        label1.innerHTML = "* Must filds "
+        label1.style.marginLeft = "-28%"
+        return
+    }
+
+    if (in2 != '') {
+
+        let label2 = document.getElementById("label2")
+        label2.style.color = "black"
+        label2.innerHTML = "Password"
+    }
+    else {
+        let label1 = document.getElementById("label2")
+        label1.style.color = "red"
+        label1.innerHTML = "* Must filds "
+        label1.style.marginLeft = "-28%"
+        return
+
+    }
     if (in1 != '' && in2 != '') {
         const a = await fetch(`../api/TeacherControler?Id=2&TeacherName=aa&Email=${in1}&Password=${in2}&TeacherId=12323&PhoneN=as`)
         if (a.status != 200) {
