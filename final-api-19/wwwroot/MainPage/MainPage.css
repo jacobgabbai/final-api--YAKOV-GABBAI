@@ -5,7 +5,8 @@
 }
 .bodyd{
    
-    position:absolute;
+    display:flex;
+    flex-direction:column;
     height:100vh;
   width:100%;
   margin:0;
@@ -36,8 +37,25 @@
     margin-left:230px;
     
 }
-.divm {
+.main {
+    display:flex;
+    flex-direction:column;
+    width:40%;
+    float:left;
+    margin-bottom:20px;
    
+}
+.pic {
+    height:300px;
+    width:30%;
+    float:left;
+    margin-top:100px;
+    margin-left:20%
+  
+}
+.divm {
+    flex-grow:1;
+  margin-bottom:20px;
    
 }
 
@@ -45,7 +63,7 @@
 
 .foot{
     
-    position:absolute;
+   
     background-color:black;
     height:100px;
    bottom:0px;
@@ -97,12 +115,13 @@
     margin-top: 30px;
     height: 30px;
     cursor: pointer;
+    width:20%;
 }
 
 .imgst{
-
-    margin-left:800px;
-    margin-top:-300px;
+    width:100%;
+    /*margin-left:55%;*/
+    /*margin-top:-300px;*/
     height:300px;
     border-radius:20px;
     
